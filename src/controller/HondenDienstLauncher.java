@@ -90,7 +90,7 @@ public class HondenDienstLauncher {
 		// Stap 6 WandelingDAO testen, wandeling met honden ophalen
 //		System.out.println();
 //		System.out.println("Wandelingen van Medewerker ophalen: ");
-//		List<Wandeling> wandelingenLijstMedewerker = wandelingDAO.getWandelingPerMedewerker(medewerkerJC);
+//		List<Wandeling> wandelingenLijstMedewerker = wandelingDAO.getWandelingenPerMedewerker(medewerkerJC);
 //		for (Wandeling wandeling : wandelingenLijstMedewerker) {
 //			System.out.println(wandeling);
 //		}
