@@ -69,13 +69,13 @@ public class HondenDienstLauncher {
 //		Medewerker medewerkerJC = medewerkerDAO.getMedewerkerPerId("JC");
 //		System.out.println("Medewerker ophalen: " + medewerkerJC);
 
-		// Stap 4 WandelingDAO testen, wandeling zonder honden opslaan
+		// Stap 4: WandelingDAO testen, wandeling zonder honden opslaan
 //		WandelingDAO wandelingDAO = new WandelingDAO(dBaccess);
 //		Wandeling wandelingJC1 = new Wandeling(LocalDate.now(), 2.5, medewerkerJC);
 //		wandelingDAO.slaWandelingOp(wandelingJC1);
 //		System.out.println();
 
-		// Stap 5 HondInWandelingDAO testen, honden van de wandeling opslaan
+		// Stap 5: HondInWandelingDAO testen, honden van de wandeling opslaan
 //		HondInWandelingDAO hondInWandelingDAO = new HondInWandelingDAO(dBaccess);
 //		wandelingJC1.getHonden().add(hondDAO.getHondPerId("47-674-0"));
 //		wandelingJC1.getHonden().add(hondDAO.getHondPerId("48-335-5"));
@@ -87,7 +87,13 @@ public class HondenDienstLauncher {
 //		wandelingJC2.getHonden().add(hondDAO.getHondPerId("48-345-5"));
 //		wandelingDAO.slaWandelingOp(wandelingJC2);
 
-		// Stap 6 WandelingDAO testen, wandeling met honden ophalen
+		// Stap 5: WandelingDAO testen, honden in wandeling ophalen
+//		List<Hond> honden = hondInWandelingDAO.getHondenPerWandeling(wandelingJC2);
+//		for (Hond hond: honden){
+//			System.out.println(hond);
+//		}
+
+		// Stap 6: WandelingDAO testen, wandeling met honden ophalen
 //		System.out.println();
 //		System.out.println("Wandelingen van Medewerker ophalen: ");
 //		List<Wandeling> wandelingenLijstMedewerker = wandelingDAO.getWandelingenPerMedewerker(medewerkerJC);
