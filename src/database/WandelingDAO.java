@@ -6,8 +6,11 @@ import java.sql.SQLException;
 
 public class WandelingDAO extends AbstractDAO {
 
+    HondInWandelingDAO hondInWandelingDAO;
+
     public WandelingDAO(DBaccess dBaccess) {
         super(dBaccess);
+        hondInWandelingDAO = new HondInWandelingDAO(dBaccess);
     }
 
     public void slaWandelingOp(Wandeling wandeling) {
@@ -20,6 +23,7 @@ public class WandelingDAO extends AbstractDAO {
             preparedStatement.setString(3, wandeling.getUitlaatMedewerker().getMedewerkerCode());
             pKey = executeInsertStatementWithKey();
             wandeling.setWandelingId(pKey);
+            hondInWandelingDAO.slaHondenInWandelingOp(wandeling);
         } catch (SQLException sqlFout) {
             System.out.println(sqlFout);
         }

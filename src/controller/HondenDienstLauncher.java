@@ -74,28 +74,28 @@ public class HondenDienstLauncher {
 		System.out.println("Medewerker ophalen: " + medewerkerJC);
 
 		// Stap 4: WandelingDAO testen, wandeling zonder honden opslaan
-//		WandelingDAO wandelingDAO = new WandelingDAO(dBaccess);
-//		Wandeling wandelingJC1 = new Wandeling(LocalDate.now(), 2.5, medewerkerJC);
+		WandelingDAO wandelingDAO = new WandelingDAO(dBaccess);
+		Wandeling wandelingJC1 = new Wandeling(LocalDate.now(), 2.5, medewerkerJC);
 //		wandelingDAO.slaWandelingOp(wandelingJC1);
 //		System.out.println();
 
 		// Stap 5: HondInWandelingDAO testen, honden van de wandeling opslaan
-//		HondInWandelingDAO hondInWandelingDAO = new HondInWandelingDAO(dBaccess);
-//		wandelingJC1.getHonden().add(hondDAO.getHondPerId("47-674-0"));
-//		wandelingJC1.getHonden().add(hondDAO.getHondPerId("48-335-5"));
-//		hondInWandelingDAO.slaHondenInWandelingOp(wandelingJC1);
+		HondInWandelingDAO hondInWandelingDAO = new HondInWandelingDAO(dBaccess);
+		wandelingJC1.getHonden().add(hondDAO.getHondPerId("47-674-0"));
+		wandelingJC1.getHonden().add(hondDAO.getHondPerId("48-335-5"));
+		hondInWandelingDAO.slaHondenInWandelingOp(wandelingJC1);
 
 		// Stap 5: WandelingDAO testen, wandeling met honden opslaan
-//		Wandeling wandelingJC2 = new Wandeling(LocalDate.now(), 3, medewerkerJC);
-//		wandelingJC2.getHonden().add(hondDAO.getHondPerId("48-986-0"));
-//		wandelingJC2.getHonden().add(hondDAO.getHondPerId("48-345-5"));
-//		wandelingDAO.slaWandelingOp(wandelingJC2);
+		Wandeling wandelingJC2 = new Wandeling(LocalDate.now(), 3, medewerkerJC);
+		wandelingJC2.getHonden().add(hondDAO.getHondPerId("48-986-0"));
+		wandelingJC2.getHonden().add(hondDAO.getHondPerId("48-345-5"));
+		wandelingDAO.slaWandelingOp(wandelingJC2);
 
 		// Stap 5: WandelingDAO testen, honden in wandeling ophalen
-//		List<Hond> honden = hondInWandelingDAO.getHondenPerWandeling(wandelingJC2);
-//		for (Hond hond: honden){
-//			System.out.println(hond);
-//		}
+		List<Hond> honden = hondInWandelingDAO.getHondenPerWandeling(wandelingJC2);
+		for (Hond hond: honden){
+			System.out.println(hond);
+		}
 
 		// Stap 6: WandelingDAO testen, wandeling met honden ophalen
 //		System.out.println();
