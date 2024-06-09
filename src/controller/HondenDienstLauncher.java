@@ -1,10 +1,12 @@
 package controller;
 
-import database.HondDAO;
-import database.KlantDAO;
-import database.DBaccess;
+import database.*;
 import model.Hond;
 import model.Klant;
+import model.Medewerker;
+import model.Wandeling;
+
+import java.time.LocalDate;
 import java.util.List;
 
 public class HondenDienstLauncher {
@@ -65,11 +67,11 @@ public class HondenDienstLauncher {
 		}
 
 		// Tussenstap: MedewerkerDAO testen
-//		MedewerkerDAO medewerkerDAO = new MedewerkerDAO(dBaccess);
-//		System.out.println();
-//		System.out.println("Testen van medewerkerDAO methods: ");
-//		Medewerker medewerkerJC = medewerkerDAO.getMedewerkerPerId("JC");
-//		System.out.println("Medewerker ophalen: " + medewerkerJC);
+		MedewerkerDAO medewerkerDAO = new MedewerkerDAO(dBaccess);
+		System.out.println();
+		System.out.println("Testen van medewerkerDAO methods: ");
+		Medewerker medewerkerJC = medewerkerDAO.getMedewerkerPerId("JC");
+		System.out.println("Medewerker ophalen: " + medewerkerJC);
 
 		// Stap 4: WandelingDAO testen, wandeling zonder honden opslaan
 //		WandelingDAO wandelingDAO = new WandelingDAO(dBaccess);
