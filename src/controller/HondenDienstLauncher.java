@@ -1,7 +1,9 @@
 package controller;
 
+import database.HondDAO;
 import database.KlantDAO;
 import database.DBaccess;
+import model.Hond;
 import model.Klant;
 import java.util.List;
 
@@ -28,39 +30,39 @@ public class HondenDienstLauncher {
 
 
 		// Stap 3: HondDAO testen, hond opslaan
-//		HondDAO hondDAO = new HondDAO(dBaccess);
+		HondDAO hondDAO = new HondDAO(dBaccess);
 //		System.out.println();
 //		System.out.println("Testen van hondDAO methodes: ");
-//		Hond seda = new Hond("50-361-0", "Seda", "Zwitserse Herder", klant2);
+		Hond seda = new Hond("50-361-0", "Seda", "Zwitserse Herder", klant2);
 //		hondDAO.slaHondOp(seda);
 
 		// Stap 3: hond ophalen, verkeerd en goed chipnummer
-//		Hond hond3 = hondDAO.getHondPerId("3");
-//		if (hond3 == null) {
-//			System.out.println("Hond met dit chipnummer bestaan niet");
-//		} else {
-//			System.out.println("Hond uit database: " + hond3);
-//		}
-//
-//		Hond sedaUitDatabase = hondDAO.getHondPerId("50-361-0");
-//		System.out.println("Seda zit in de database: " + sedaUitDatabase);
-//
-//		List<Hond> hondenLijst = hondDAO.getHondenPerKlant(klant2);
-//		System.out.println();
+		Hond hond3 = hondDAO.getHondPerId("x69");
+		if (hond3 == null) {
+			System.out.println("Hond met dit chipnummer bestaan niet");
+		} else {
+			System.out.println("Hond uit database: " + hond3);
+		}
+
+		Hond sedaUitDatabase = hondDAO.getHondPerId("50-361-0");
+		System.out.println("Seda zit in de database: " + sedaUitDatabase);
+
+		List<Hond> hondenLijst = hondDAO.getHondenPerKlant(klant2);
+		System.out.println();
 
 		// Stap 3: honden van klant ophalen
-//		System.out.println("Hond(en) van klant " + klant2.getAchternaam() + " ophalen");
-//		for (Hond hond : hondenLijst) {
-//			System.out.println(hond);
-//		}
-//		System.out.println();
+		System.out.println("Hond(en) van klant " + klant2.getAchternaam() + " ophalen");
+		for (Hond hond : hondenLijst) {
+			System.out.println(hond);
+		}
+		System.out.println();
 
 		// Stap 3: alle honden ophalen
-//		System.out.println("Alle honden ophalen: ");
-//		hondenLijst = hondDAO.getHonden();
-//		for (Hond hond : hondenLijst) {
-//			System.out.println(hond);
-//		}
+		System.out.println("Alle honden ophalen: ");
+		hondenLijst = hondDAO.getHonden();
+		for (Hond hond : hondenLijst) {
+			System.out.println(hond);
+		}
 
 		// Tussenstap: MedewerkerDAO testen
 //		MedewerkerDAO medewerkerDAO = new MedewerkerDAO(dBaccess);
