@@ -17,14 +17,14 @@ public class HondenDienstLauncher {
 			System.out.println(klant);
 		}
 
-		// Stap 2: KlantDAO testen, klant opslaan
+//		 Stap 2: KlantDAO testen, klant opslaan
 //		System.out.println("Testen van klantDAO methods: ");
 //		klantDAO.slaKlantOp(new Klant("O.B.", null, "Bommel", "098712345"));
 
 		// Stap 2: Klant ophalen
-//		Klant klant2 = klantDAO.getKlantPerId(2);
-//		System.out.println("Klant ophalen: " + klant2);
-//		System.out.println();
+		Klant klant2 = klantDAO.getKlantPerId(1);
+		System.out.println("Klant ophalen: " + klant2);
+		System.out.println();
 
 
 		// Stap 3: HondDAO testen, hond opslaan

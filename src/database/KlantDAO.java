@@ -14,6 +14,21 @@ public class KlantDAO extends AbstractDAO {
 		super(dBaccess);
 	}
 
+	public void slaKlantOp(Klant klant) {
+		String sql = "INSERT INTO klant(voorletters, tussenvoegsel, achternaam, telefoon) VALUES(?, ?, ?, ?);";
+		int pKey = 0;
+		try {
+			setupPreparedStatementWithKey(sql);
+			preparedStatement.setString(1, klant.getVoorletters());
+			preparedStatement.setString(2, klant.getTussenvoegsel());
+			preparedStatement.setString(3, klant.getAchternaam());
+			preparedStatement.setString(4, klant.getTelefoon());
+			pKey = executeInsertStatementWithKey();
+			klant.setKlantnummer(pKey);
+		} catch (SQLException sqlFout) {
+			System.out.println(sqlFout);
+		}
+	}
 
 	public List<Klant> getKlanten() {
 		List<Klant> klantenLijst = new ArrayList<>();
@@ -37,4 +52,25 @@ public class KlantDAO extends AbstractDAO {
 		}
 		return klantenLijst;
 	}
+
+	public Klant getKlantPerId(int klantId){
+		Klant klant = null;
+		String sql = "SELECT * FROM klant WHERE klantnummer = ?;";
+		try {
+			setupPreparedStatement(sql);
+			preparedStatement.setInt(1, klantId);
+			ResultSet resultSet = executeSelectStatement();
+			resultSet.next();
+			String voorletters = resultSet.getString(2);
+			String tussenvoegsel = resultSet.getString(3);
+			String achternaam = resultSet.getString(4);
+			String telefoon = resultSet.getString(5);
+			klant = new Klant(klantId, voorletters, tussenvoegsel, achternaam,  telefoon);
+
+		} catch (SQLException sqlFout) {
+			System.out.println(sqlFout);
+		}
+		return klant;
+	}
+
 }
